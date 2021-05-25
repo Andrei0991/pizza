@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Pizza Products</title>
+</head>
+
+<body>
+    <div id="myDIV" class="header" align="center">
+        <h1>My pizza list</h1>
+    </div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td id="item"><strong>Quatro Stagioni</strong></td>
+                <td id="price">10$</td>
+                <td><th scope="col"><button class="add-cart" btn-sm btn-secondary>Add to Cart</button></th></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td id="item1"><strong>Margherita</strong></td>
+                <td id="price1">11$</td>
+                <td><th scope="col"><button class="add-cart" btn-sm btn-secondary>Add to Cart</button></th></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td id="item2"><strong>Quatro Formaggi</strong></td>
+                <td id="price2">12$</td>
+                <td><th scope="col"><button class="add-cart" btn-sm btn-secondary>Add to Cart</button></th></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="pizzaCart.html"><button id="CartButton" type="button" class="btn btn-secondary btn-lg">Cart <span id="cartQuantity">0</span></button></a>
+    <script src="products.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script>
+                var products = [
+                {
+                    name: "Quatro Stagioni",
+                    price: 10,
+                    tag: "stagioni",
+                    
+                },
+                {
+                    name: "Margherita",
+                    price: 11,
+                    tag: "margherita",
+                    
+                },
+                {
+                    name: "Quatro Formaggi",
+                    price: 12,
+                    tag: "formaggi",
+                    
+                },
+            ];
+
+            let addItemsToCart = document.querySelectorAll(".add-cart");                                                            
+                    for (let i = 0; i < addItemsToCart.length; i++) {
+            addItemsToCart[i].addEventListener("click", function() {
+                cartNumbers(products[i]);
+                totalCost(products[i]);
+            });
+            }
+
+    </script>
+</body>
+
+
+</html>
